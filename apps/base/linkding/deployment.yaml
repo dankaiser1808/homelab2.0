@@ -6,6 +6,10 @@ metadata:
   name: linkding
   namespace: linkding
 spec:
+  securityContext:
+    runAsUser: 33
+    runAsGroup: 33
+    fsGroup: 33
   replicas: 1
   selector:
     matchLabels:
@@ -22,6 +26,8 @@ spec:
       containers:
       - image: sissbruecker/linkding:1.42.0
         name: linkding
+        securityContext:
+          allowPrivilegeEscalation: false
         ports:
         - containerPort: 9090
         volumeMounts:
