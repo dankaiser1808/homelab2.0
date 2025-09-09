@@ -27,7 +27,7 @@ spec:
       - image: sissbruecker/linkding:1.42.0
         name: linkding
         envFrom:
-        - secretKeyRef:
+        - secretRef:
             name: user-secret
         securityContext:
           allowPrivilegeEscalation: false
