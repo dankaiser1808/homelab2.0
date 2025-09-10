@@ -25,6 +25,3 @@ spec:
       - paths: ["/metadata/annotations/prometheus-operator-validated"]
         target:
           kind: PrometheusRule
-  values:
-    grafana:
-      adminPassword: ou3Y7q7FHzCvVWCBWFAP

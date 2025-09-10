@@ -3,3 +3,13 @@ kind: Kustomization
 namespace: monitoring
 resources:
   - ../../base/kube-prometheus-stack/
+patchesStrategicMerge:
+  - patch.yaml
+
+configMapGenerator:
+  - name: kube-prometheus-prod-values
+    namespace: monitoring
+    files:
+      - values.yaml=values-production.yaml
+generatorOptions:
+  disableNameSuffixHash: true
