@@ -4,10 +4,10 @@ metadata:
   name: monitoring-controllers
   namespace: flux-system
 spec:
-  #decryption:
-  #  provider: sops
-  #  secretRef:
-  #    name: sops-age
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
   interval: 1m0s
   path: ./monitoring/controllers/production
   retryInterval: 1m
