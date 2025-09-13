@@ -5,10 +5,14 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./infrastructure/production
+  path: ./infrastructure/controllers/production
   retryInterval: 1m
   sourceRef:
     kind: GitRepository
     name: flux-system
   timeout: 5m
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
