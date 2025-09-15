@@ -60,6 +60,11 @@ Everything needed to run my cluster & deploy my applications
         <td>DNS tunnel solution for local DNS and public domain mapping</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/traefik/traefik/docs/content/assets/img/traefikproxy-icon-color.png"></td>
+        <td><a href="https://traefik.io/traefik">Traefik</a></td>
+        <td>Cloud native application proxy</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://raw.githubusercontent.com/age-sops/age/a6f31cc254a8e1b56881f6f245cd0857238bd5bd/logo/logo.svg"></td>
         <td><a href="https://fluxcd.io/flux/guides/mozilla-sops/">SOPS AGE</a></td>
         <td>Fully encrypted Kubernetes secrets</td>
