@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  METADATA_PATH: /metadata
+  CONFIG_PATH: /config
+  PORT: "3005"
+  TZ: "America/Chicago"
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: audiobookshelf
