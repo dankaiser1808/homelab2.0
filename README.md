@@ -22,7 +22,7 @@ The setup utilizes **Kustomize** to create a hierarchy between the production en
 
 ### ArgoCD → Flux
 
-**ArgoCD** is an excellent solution for enterprise-grade developer platforms with an application-centric approach and beautiful UI. However, it felt somewhat clunky compared to **Flux**. Flux is minimalistic, closely aligned with Kubernetes-native resources, and comes with comprehensive best practices—all manageable from the CLI. This approach perfectly suits my primarily infrastructure-based deployments.
+**ArgoCD** is a great solution for enterprise-grade developer platforms with an application-centric approach and beautiful UI. However, it felt somewhat clunky compared to **Flux**. Flux is minimalistic, closely aligned with Kubernetes-native resources, and comes with comprehensive best practice, all manageable from the CLI. This approach perfectly suits my primarily infrastructure-based deployments.
 
 ## Currently Hosted Services
 
