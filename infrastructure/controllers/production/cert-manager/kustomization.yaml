@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: cert-manager
 resources:
   - ../../base/cert-manager/
-  - cloudflare-token.yaml
 
 patchesStrategicMerge:
   - patch.yaml
