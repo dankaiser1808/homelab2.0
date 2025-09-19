@@ -1,36 +1,35 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infrastructure
+  name: core
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./infrastructure/controllers/production
+  path: ./core/controllers/production
   retryInterval: 1m
   sourceRef:
     kind: GitRepository
     name: flux-system
   timeout: 5m
   prune: true
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-configs
+  name: core-configs
   namespace: flux-system
 spec:
   dependsOn:
-    - name: infrastructure
-    - name: core-configs
+    - name: core
   interval: 1h
   retryInterval: 1m
   timeout: 5m
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/configs/production
+  path: ./core/configs/production
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
