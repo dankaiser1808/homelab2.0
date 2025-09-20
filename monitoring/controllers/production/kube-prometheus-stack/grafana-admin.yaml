@@ -1,24 +1,22 @@
-apiVersion: v1
-data:
-    admin-password: ENC[AES256_GCM,data:QGcFIGoXql/9csGrwwZ4hV3CfGR0DbUovk65Bw==,iv:dXqKBB78IcWWuXSGyiblK/aEJH8ooocVOEgtLPnQ2jU=,tag:qX6ySDSIwT9xakycUqhmhw==,type:str]
-    admin-user: ENC[AES256_GCM,data:uBRyLkxnCpQ=,iv:hNYtGwip4Rzi9ONdKTxpyVZNQe4nyNXTS3MVa1tSw9s=,tag:/JCxSLdVsiC4anbIgMvtYg==,type:str]
-kind: Secret
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
 metadata:
-    creationTimestamp: null
+  name: grafana-admin
+  namespace: monitoring
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: parameterstore
+    kind: ClusterSecretStore
+  target:
     name: grafana-admin
-    namespace: monitoring
-sops:
-    age:
-        - recipient: age19c8mxlee2tntag5mx43qh5r3jdd5wf0ngw9qf2erzsj7507ypeqqjgnyaq
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqS01yVERLYWNTV3ZnblRP
-            QmNMYUFDdmt2dkI5ckhiUGlRRXhONEdIcEdRCmY4T3lJQWRTYjlvaGJQVkVRV0VE
-            Z1VhNVlSQkFuSzdXZlFIOVBaRkN4dXcKLS0tIEd2WnNIdWZrWU5mUlpuQUdENUhO
-            YWk4NW5NWHRIcDFDY3FLR2VOWUd0R2cK4PPd/3PVbIl/VmlTl8rbALo5nO4Dmz0u
-            Bdv6tgSTzSWVpRk0IUXmG2587HIjbzoQcFtpG0us5tJEIV9bExhu/w==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-10T00:57:09Z"
-    mac: ENC[AES256_GCM,data:UpVRLDy7pHnjv525fp/c7djUtMYaJ0rLiKf0fAePhMi8sFp02lNousHn8ChGtFkerY87uwXKf/f5FHehFEyApvsOVDF/AHk+mJSOUPFW452hfi6eYTZkkmQ/be57XwMPiif/pClnKmcAWQFgpAB/uz+w2fg/+qyx1Kynm1MwiiA=,iv:j3TlSwX0wYFejEwErOa9i3OicHmBkppbHIOitOweHuI=,tag:gMCIwrxxRFooWZ+GmV0aFQ==,type:str]
-    encrypted_regex: ^(data|stringData)$
-    version: 3.10.2
+    creationPolicy: Owner
+  data:
+  - secretKey: admin-password
+    remoteRef:
+      key: /homelab/prod-grafana-admin
+      property: admin-password
+  - secretKey: admin-user
+    remoteRef:
+      key: /homelab/prod-grafana-admin
+      property: admin-user
