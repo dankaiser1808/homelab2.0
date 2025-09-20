@@ -67,7 +67,12 @@ Everything needed to run my cluster & deploy my applications
     <tr>
         <td><img width="32" src="https://raw.githubusercontent.com/age-sops/age/a6f31cc254a8e1b56881f6f245cd0857238bd5bd/logo/logo.svg"></td>
         <td><a href="https://fluxcd.io/flux/guides/mozilla-sops/">SOPS AGE</a></td>
-        <td>Fully encrypted Kubernetes secrets</td>
+        <td>Encrypted secrets for core components</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/external-secrets/external-secrets/assets/eso-round-logo.svg"></td>
+        <td><a href="https://external-secrets.io/latest/">External Secrets Operator</a></td>
+        <td>Sync secrets from AWS SSM to my homelab</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/flux-cd.svg"></td>
