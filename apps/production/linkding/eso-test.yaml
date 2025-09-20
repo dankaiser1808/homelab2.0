@@ -1,0 +1,16 @@
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  name: test-secret
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: aws-ssm
+    kind: ClusterSecretStore
+  target:
+    name: linkding-admin
+    creationPolicy: Owner
+  data:
+  - secretKey: test-secret
+    remoteRef:
+      key: /homelab/prod-test-secret

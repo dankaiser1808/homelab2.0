@@ -5,3 +5,4 @@ resources:
   - ../../base/linkding/
   - linkding-admin.yaml
   - ingress.yaml
+  - eso-test.yaml
