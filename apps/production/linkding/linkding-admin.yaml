@@ -1,24 +1,22 @@
-apiVersion: v1
-data:
-    LD_SUPERUSER_NAME: ENC[AES256_GCM,data:IOKDOXPuyvI=,iv:/b5at43F413sQKU1t+S8sn9LdCCP+zJnaKCxIE08Cdg=,tag:pfY+vSunNko8Wq1PSMfQHA==,type:str]
-    LD_SUPERUSER_PASSWORD: ENC[AES256_GCM,data:jOddd1F3D1y4Wi4DomuIBKQav8nUZucYkYeZiKENWAMpRtchYn/J6w==,iv:fIWcc/RTrhVOv/D5yRtt62HLDKHKFYsg/8uTDaQE/rk=,tag:zGTjDgZjYAjGvw7lCrZCyg==,type:str]
-kind: Secret
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
 metadata:
-    creationTimestamp: null
+  name: linkding-admin
+  namespace: linkding
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: parameterstore
+    kind: ClusterSecretStore
+  target:
     name: linkding-admin
-    namespace: linkding
-sops:
-    age:
-        - recipient: age19c8mxlee2tntag5mx43qh5r3jdd5wf0ngw9qf2erzsj7507ypeqqjgnyaq
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBRZjJaUTNudnRETUF1d3dp
-            K01rajkwYUVGbnQ2YUtjeTUxU3psbEN5dkJjClVwNjVZVVZEdTFhYTl5QU5xcFJm
-            RDZUamNZS0dma0w2ZTFvOEdobDdBc2sKLS0tIEZSQ3h2SjEraEJkTDF1UmFwVFBy
-            dXYzdjE3WjlXM3ZwSXRYQjd6RFlDUm8KSoD61oJsc1oEosWooNXwjsH7/v5G8SPN
-            2yovPfxMQbTo8kBLyFQZOfNoJu4HCOE6YJjfoZhAQrBzWTB0hp9myg==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-15T02:11:39Z"
-    mac: ENC[AES256_GCM,data:c7iZDqeR+mR4r2HvkAKZAcduqDloyjqa0jPfVpqraEDB1Z2BUf5AkwdwEy+FGS5WNvACgb1UAW5Dg0bptsJAk+Ehf1PKNXj+Y0prSefwLOO/gaT0b9vkN+JeH93M74nTEHE3hV43SwFKx9kk/F1qZb0q8vpK7dKvSlUQrmUm67g=,iv:68Vczp/k5oMFyITtigNA9/xrbAC8VbmhBFU6aYzMyfU=,tag:0cNcl3UT7sp9orShS5y7BA==,type:str]
-    encrypted_regex: ^(data|stringData)$
-    version: 3.10.2
+    creationPolicy: Owner
+  data:
+  - secretKey: LD_SUPERUSER_NAME
+    remoteRef:
+      key: prod-linkding-admin
+      property: username
+  - secretKey: LD_SUPERUSER_PASSWORD
+    remoteRef:
+      key: prod-linkding-admin
+      property: LD_SUPERUSER_PASSWORD
