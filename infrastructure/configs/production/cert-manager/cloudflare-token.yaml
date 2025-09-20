@@ -1,22 +1,18 @@
-apiVersion: v1
-data:
-    cloudflare-token: ENC[AES256_GCM,data:Fk77HzNXES1PW83E5Z9xv7KCSwiEDB63Y/2ug75MzEM/yB0JiM4raBvaU2ecNwiEOrm1VTHJIfI=,iv:rtr/Ns34SOZgltbHv0Q2SjAPqWXg2+epquQuD+Xri9g=,tag:77a+/7NXXT9FRpv2lZEZgw==,type:str]
-kind: Secret
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
 metadata:
+  name: cloudflare-token
+  namespace: cert-manager
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: parameterstore
+    kind: ClusterSecretStore
+  target:
     name: cloudflare-token
-    namespace: cert-manager
-sops:
-    age:
-        - recipient: age19c8mxlee2tntag5mx43qh5r3jdd5wf0ngw9qf2erzsj7507ypeqqjgnyaq
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4N2ZHalF3SEVRUEZqeUxS
-            VDI5bVY0SFpCLzdpMEJnSkZXejZzUU9NR1VVCjRhK25xdE1PdmMybjRWMXRIMitN
-            aEFJTlRqM1RxeUJEak5mVmJmQlpZSDAKLS0tIG1uMEZvVlo2d0NCb3JFME5mbTdH
-            ZnJod2o1ZG9CSS9JalY1R1NPYm95blEKt6MdHp2qjP37Hyp+VD2hfBKMyix5eRkK
-            r7ASAVVCUFx9sOHyPeu1sOkX4ziOC5pFQlr1r5spa2BEM2IZq3qaTA==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-14T21:26:14Z"
-    mac: ENC[AES256_GCM,data:5Q/ekgT2XsqYA+ZNeDYWC13uyFea/fj/ijYec+bbYt6bFhjLciCMIUgYYUYQhoiKW3cNlVw0dM3cIQ4tXn3QfRsLHG0V1tyd9M9mWWZEVBCTZj3cJ1c/ZwF7ieR94O5wXVcij+Jf2h0UJq3z3Dk223lQPz05UKN7RthKze91K18=,iv:FLeNxPAUpb1MYfJlJodRM+DUuFNz8ieTJxZnj+H50lI=,tag:Ys1s1gpfYLgfqSLj3kgjNA==,type:str]
-    encrypted_regex: ^(data|stringData)$
-    version: 3.10.2
+    creationPolicy: Owner
+  data:
+  - secretKey: cloudflare-token
+    remoteRef:
+      key: /homelab/prod-cloudflare-token
+      property: token
