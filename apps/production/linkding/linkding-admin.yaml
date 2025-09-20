@@ -14,9 +14,9 @@ spec:
   data:
   - secretKey: LD_SUPERUSER_NAME
     remoteRef:
-      key: prod-linkding-admin
+      key: /homelab/prod-linkding-admin
       property: LD_SUPERUSER_NAME
   - secretKey: LD_SUPERUSER_PASSWORD
     remoteRef:
-      key: prod-linkding-admin
+      key: /homelab/prod-linkding-admin
       property: LD_SUPERUSER_PASSWORD
