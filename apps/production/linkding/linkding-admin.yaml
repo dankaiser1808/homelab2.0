@@ -15,7 +15,7 @@ spec:
   - secretKey: LD_SUPERUSER_NAME
     remoteRef:
       key: prod-linkding-admin
-      property: username
+      property: LD_SUPERUSER_NAME
   - secretKey: LD_SUPERUSER_PASSWORD
     remoteRef:
       key: prod-linkding-admin
