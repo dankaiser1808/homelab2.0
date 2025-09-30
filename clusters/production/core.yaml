@@ -29,7 +29,3 @@ spec:
     name: flux-system
   path: ./core/configs/production
   prune: true
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
