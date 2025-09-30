@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$AWS_ACCESS_KEY" ] || [ -z "$AWS_SECRET_ACCESS_KEY" ] || [ -z "$CLUSTER_NAME" ] || [ -z "$KUBECONFIG" ]; then
-  echo "Error: CLIENT_ID, CLIENT_SECRET, KUBECONFIG and CLUSTER_NAME must be set"
+  echo "Error: AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY, KUBECONFIG and CLUSTER_NAME must be set"
   exit 1
 fi
 
