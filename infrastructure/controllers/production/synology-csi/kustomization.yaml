@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: synology-csi
 resources:
   - ../../base/synology-csi/
-  - synology-csi-driver.yaml
+  - synology-csi-secret.yaml
 
 patchesStrategicMerge:
   - patch.yaml
