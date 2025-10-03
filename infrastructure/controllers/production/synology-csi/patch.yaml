@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: synology-csi
+  namespace: synology-csi
+spec:
+  valuesFrom:
+    - kind: ConfigMap
+      name: synology-csi-prod-values
+      valuesKey: values.yaml
