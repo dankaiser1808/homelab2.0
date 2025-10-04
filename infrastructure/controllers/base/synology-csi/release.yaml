@@ -7,7 +7,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: synology-csi
+      chart: synology-csi-talos
       version: "0.9.4"
       sourceRef:
         kind: HelmRepository
