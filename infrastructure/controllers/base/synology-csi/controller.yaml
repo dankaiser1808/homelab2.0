@@ -161,7 +161,7 @@ spec:
             - name: client-info
               mountPath: /etc/synology
               readOnly: true
-      imagePullSecret:
+      imagePullSecrets:
         - name: ghcr-access-secret
       volumes:
         - name: socket-dir
