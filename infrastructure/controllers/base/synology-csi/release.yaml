@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: synology-csi
-        namespace: synology-csi
+        namespace: flux-system
       interval: 12h
   install:
     crds: Create
