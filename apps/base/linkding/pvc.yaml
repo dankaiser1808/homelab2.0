@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: linkding-data-pvc
 spec:
-  storageClassName: synostorage
+  storageClassName: synology-csi-retain
   accessModes:
     - ReadWriteOnce
   resources:
