@@ -1,3 +1,0 @@
-clientInfoSecret:
-  create: false
-  name: "synology-csi-secret"
