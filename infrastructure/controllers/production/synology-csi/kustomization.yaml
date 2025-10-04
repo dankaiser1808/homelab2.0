@@ -4,3 +4,4 @@ namespace: synology-csi
 resources:
   - ../../base/synology-csi/
   - client-info-secret.yaml
+  - ghcr-access-secret.yaml
