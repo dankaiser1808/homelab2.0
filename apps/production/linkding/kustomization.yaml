@@ -4,4 +4,3 @@ namespace: linkding
 resources:
   - ../../base/linkding/
   - linkding-admin.yaml
-  - ingress.yaml
