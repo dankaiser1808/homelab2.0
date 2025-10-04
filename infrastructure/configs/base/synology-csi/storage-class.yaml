@@ -6,7 +6,7 @@ metadata:
   name: synostorage
 provisioner: csi.san.synology.com
 parameters:
-  fsType: 'btrfs'
+  fsType: 'ext4'
   dsm: '192.168.1.222'
   location: '/volume2'
   formatOptions: '--nodiscard'
