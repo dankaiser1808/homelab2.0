@@ -114,6 +114,8 @@ spec:
               mountPath: /host
             - name: device-dir
               mountPath: /dev
+      imagePullSecrets:
+        - name: ghcr-access-secret
       volumes:
         - name: kubelet-dir
           hostPath:
