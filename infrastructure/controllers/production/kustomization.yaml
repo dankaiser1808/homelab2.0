@@ -5,3 +5,4 @@ resources:
   - cloudflared
   - cert-manager
   - synology-csi
+  - cloudnative-pg
