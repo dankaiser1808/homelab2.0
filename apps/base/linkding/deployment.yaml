@@ -24,7 +24,7 @@ spec:
         persistentVolumeClaim:
           claimName: linkding-data-pvc
       containers:
-      - image: sissbruecker/linkding:1.42.0
+      - image: sissbruecker/linkding:1.44.1
         name: linkding
         envFrom:
         - secretRef:
