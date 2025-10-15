@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - ../../base/cloudnative-pg
   - postgres-admin.yaml
+  - linkding-postgres-secret.yaml

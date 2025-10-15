@@ -6,6 +6,7 @@ metadata:
 spec:
   template:
     spec:
+      restartPolicy: OnFailure
       initContainers:
       - image: postgres:alpine3.21
         name: db-init
@@ -47,11 +48,10 @@ spec:
         - name: LINKDING_PSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: linkding-postgres
+              name: linkding-db-secret
               key: password
         - name: LINKDING_PSQL_USER
           valueFrom:
             secretKeyRef:
               name: linkding-db-secret
               key: username
-      restartPolicy: OnFailure
