@@ -5,6 +5,9 @@ metadata:
   namespace: database
 spec:
   template:
+    metadata:
+      labels:
+        app: db-init
     spec:
       restartPolicy: OnFailure
       initContainers:
