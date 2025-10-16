@@ -51,10 +51,10 @@ spec:
         - name: LINKDING_PSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: linkding-db-secret
-              key: password
+              name: linkding-postgres
+              key: LINKDING_PSQL_PASSWORD
         - name: LINKDING_PSQL_USER
           valueFrom:
             secretKeyRef:
-              name: linkding-db-secret
-              key: username
+              name: linkding-postgres
+              key: LINKDING_PSQL_USER
