@@ -28,7 +28,9 @@ spec:
         name: linkding
         envFrom:
         - secretRef:
-            name: linkding-admin
+            name: linkding-credentials
+        - configMapRef:
+            name: linkding-config
         securityContext:
           allowPrivilegeEscalation: false
         ports:

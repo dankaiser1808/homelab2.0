@@ -1,16 +1,16 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: homelab-cluster
+  name: prod-linkding-cnpg
   namespace: database
 spec:
   instances: 3
   storage:
-    size: 100Gi
+    size: 1Gi
     storageClass: synology-iscsi-retain
   bootstrap:
     initdb:
-      database: app
-      owner: app
+      database: linkding
+      owner: linkding
       secret:
-        name: homelab-cluster-app
+        name: linkding-credentials
