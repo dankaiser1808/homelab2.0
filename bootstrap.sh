@@ -19,9 +19,9 @@ stringData:
     secret-access-key: ${AWS_SECRET_ACCESS_KEY}
 EOF
 
-#helm repo add cilium https://helm.cilium.io
-#helm repo update
-#helm install cilium cilium/cilium --version 1.18.2 -n kube-system -f https://raw.githubusercontent.com/dankaiser1808/homelab2.0/refs/heads/main/core/controllers/base/cilium/values.yaml
+helm repo add cilium https://helm.cilium.io
+helm repo update
+helm install cilium cilium/cilium --version 1.18.2 -n kube-system -f https://raw.githubusercontent.com/dankaiser1808/homelab2.0/refs/heads/main/core/controllers/base/cilium/values.yaml
 
 flux bootstrap github \
   --owner=dankaiser1808 \
