@@ -16,6 +16,7 @@ spec:
         app: linkding
     spec:
       securityContext:
+        runAsnonRoot: true
         runAsUser: 33
         runAsGroup: 33
         fsGroup: 33
@@ -28,7 +29,7 @@ spec:
         name: linkding
         envFrom:
         - secretRef:
-            name: linkding-credentials
+            name: linkding-container-credentials
         - configMapRef:
             name: linkding-config
         securityContext:
