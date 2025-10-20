@@ -22,7 +22,7 @@ spec:
       volumes:
       - name: linkding-data
         persistentVolumeClaim:
-          claimName: linkding-data-pvc
+          claimName: linkding-data
       containers:
       - image: sissbruecker/linkding:1.42.0
         name: linkding
