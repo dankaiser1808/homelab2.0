@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   LD_DB_DATABASE: linkding
   LD_DB_ENGINE: postgres
-  LD_DB_HOST: homelab-cluster-rw.database.svc.cluster.local
+  LD_DB_HOST: prod-linkding-cnpg-rw
   LD_DB_PORT: "5432"
 kind: ConfigMap
 metadata:
