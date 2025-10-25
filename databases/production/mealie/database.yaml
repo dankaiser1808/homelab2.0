@@ -1,0 +1,16 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: prod-mealie-cnpg
+  namespace: mealie
+spec:
+  instances: 3
+  storage:
+    size: 5Gi
+    storageClass: synology-iscsi-retain
+  bootstrap:
+    initdb:
+      database: mealie
+      owner: mealie
+      secret:
+        name: mealie-credentials
