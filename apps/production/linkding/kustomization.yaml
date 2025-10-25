@@ -3,4 +3,6 @@ kind: Kustomization
 namespace: linkding
 resources:
   - ../../base/linkding/
-  - linkding-secrets.yaml
+  - linkding-db-secrets.yaml
+  - linkding-admin.yaml
+

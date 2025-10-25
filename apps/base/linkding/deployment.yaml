@@ -30,6 +30,8 @@ spec:
         envFrom:
         - secretRef:
             name: linkding-container-credentials
+        - secretRef:
+            name: linkding-admin
         - configMapRef:
             name: linkding-config
         securityContext:
