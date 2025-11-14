@@ -20,7 +20,7 @@ spec:
         persistentVolumeClaim:
           claimName: mealie-data
       containers:
-      - image: ghcr.io/mealie-recipes/mealie:v3.3.2
+      - image: ghcr.io/mealie-recipes/mealie:v3.5.0
         name: mealie
         envFrom:
         - secretRef:
